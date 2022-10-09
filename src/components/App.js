@@ -3,21 +3,21 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 const App = () => {
 //code here 
- const [name,setName] = useState([]);
- const [id, setId] = useState(1);
- 
- useEffect(() => {
-  fetch(`http://content.newtonschool.co/v1/pr/main/users/${id}`)
-  .then(response => response.json())
-  .then(data => {
-   console.log(data);
-   setName(data)
+ const [name,setname] = useState([]);
+ const [id,setid] = useState(1);
+useEffect(()=>{
+  fetch(`https://content.newtonschool.co/v1/pr/main/users/${id}`)
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data);
+    setname(data)
   })
- }, [id])
- 
- const changeInput = (e) => (
-  setId(e.target.value)
-  }
+},[id])
+
+const changeInput = (e)=>{
+  
+  setid(e.target.value)
+}
 
   return (
     <div className="App">
